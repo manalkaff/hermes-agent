@@ -1,0 +1,10 @@
+services:
+  hermes:
+    image: nousresearch/hermes-agent:latest
+    restart: unless-stopped
+    volumes:
+      - hermes_data:/opt/data
+    command: ["sleep", "infinity"]
+
+volumes:
+  hermes_data:
