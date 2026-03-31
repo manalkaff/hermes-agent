@@ -1,10 +1,12 @@
 services:
   hermes:
     image: nousresearch/hermes-agent:latest
+    container_name: hermes-agent
     restart: unless-stopped
     volumes:
       - hermes_data:/opt/data
-    command: ["sleep", "infinity"]
+    entrypoint: ["/bin/bash", "-lc"]
+    command: ["sleep infinity"]
 
 volumes:
   hermes_data:
